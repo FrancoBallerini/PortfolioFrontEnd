@@ -8,43 +8,80 @@
           href="https://argentinaprograma.inti.gob.ar/"
           target="-blank"
         >
-          <img src="img/APLogo-20-20.png" width="100px" alt="logo" />
+        <img alt="item"
+        [src]="itemImageUrl"
+        width="100px">
         </a>
 
-        <ul class="nav justify-content-end">
-          <div class="d-flex align-items-center">
-            <button>
-                <a href="#" target="_blank"
-                  ><fa-icon [icon]="faCoffee"></fa-icon>
-                >instagram</a>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+            <button type="button" class="btn btn-link">
+                <a href="https://www.instagram.com" target="_blank">
+                  <fa-icon
+                  [icon]="faInstagram"
+                  >
+                  </fa-icon>
+                </a>
               </button>
-              <button>
-                <a href="#" target="_blank"
-                  ><i class="fab fa-github fa-2x" aria-hidden="true"></i
-                >facebook</a>
+              <button type="button" class="btn btn-link">
+                <a href="https://twitter.com/?lang=es" target="_blank"
+                  ><fa-icon
+                  [icon]="faTwitter"
+                  >
+                  </fa-icon>
+                </a>
               </button>
-            <button>
+            <button type="button" class="btn btn-link">
               <a href="https://github.com/FrancoBallerini" target="_blank"
-                ><i class="fab fa-github fa-2x" aria-hidden="true"></i
-              >github</a>
+                ><fa-icon
+                [icon]="faGithub"
+                >
+                </fa-icon></a>
             </button>
-            <button>
+            <button type="button" class="btn btn-link">
               <a
                 href="https://www.linkedin.com/in/franco-eduardo-ballerini-b7536b110/"
                 target="_blank"
-                ><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i
-              >linkedin</a>
+                ><fa-icon
+                [icon]="faLinkedinIn"
+                >
+                </fa-icon>
+              </a>
             </button>
-            <button type="button" class="btn btn-link px-3 me-2">
+             <div class="btn-group">
+              <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a href="#login">
+                  <fa-icon
+                  [icon]="faUserCircle"
+                  >
+                  </fa-icon>
+                </a>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button class="dropdown-item" type="button">
+                  <p>
+                  <fa-icon
+                  [icon]="faHandshake">
+                  </fa-icon >
+                  Login</p>
+                </button>
+              </li>
+                <li><button class="dropdown-item" type="button">
+                  <p>
+                  <fa-icon
+                  [icon]="faHandScissors"
+                  >
+                  </fa-icon >
+                  Salir</p>
+                </button>
+              </li>
 
-                <a href="#login"
-                  ><i class="fa fa-user-circle fa-1x" aria-hidden="true"></i
-                >login</a>
+              </ul>
+            </div>
 
-            </button>
 
-          </div>
-        </ul>
+
+        </div>
       </div>
     </nav>
 

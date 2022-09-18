@@ -1,0 +1,7 @@
+.btn-link {
+  --bs-btn-hover-border-color: #{shade-color($bd-blue, 10%)};
+}
+
+p {
+  color: blue;
+}
