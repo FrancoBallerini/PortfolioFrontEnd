@@ -48,8 +48,10 @@
                 </fa-icon>
               </a>
             </button>
+
+
              <div class="btn-group">
-              <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
                 <a href="#login">
                   <fa-icon
                   [icon]="faUserCircle"
@@ -58,28 +60,26 @@
                 </a>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><button class="dropdown-item" type="button">
+                <li><button class="btn btn-link dropdown-item " type="button">
                   <p>
-                  <fa-icon
-                  [icon]="faHandshake">
-                  </fa-icon >
-                  Login</p>
+                  User Name</p>
                 </button>
               </li>
-                <li><button class="dropdown-item" type="button">
+                <li><button class="btn btn-link dropdown-item" type="button">
                   <p>
-                  <fa-icon
-                  [icon]="faHandScissors"
-                  >
-                  </fa-icon >
-                  Salir</p>
+                  Password</p>
                 </button>
               </li>
 
               </ul>
             </div>
 
-
+            <button type="button" class="btn btn-link">
+              <a
+                href="#"
+                >Log Out
+              </a>
+            </button>
 
         </div>
       </div>
@@ -96,5 +96,10 @@
       </section>
 
     </div>
+
+
+
+
+
   </header>
 
