@@ -6,9 +6,6 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 
-import { faHandshake } from '@fortawesome/free-solid-svg-icons';
-import { faHandScissors } from '@fortawesome/free-solid-svg-icons';
-
 
 
 
@@ -29,8 +26,7 @@ export class HeaderComponent implements OnInit {
 
   itemImageUrl= '../assets/IMG/APLogo.png';
 
-  faHandshake = faHandshake;
-  faHandScissors = faHandScissors;
+
 
   constructor() { }
 
