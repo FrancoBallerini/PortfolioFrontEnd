@@ -5,13 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AcercadeComponent } from './components/acercade/acercade.component';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { SkillComponent } from './components/skill/skill.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    AcercadeComponent,
+    ExperienciaComponent,
+    EducacionComponent,
+    SkillComponent,
+    ProyectosComponent
+
   ],
   imports: [
     BrowserModule,

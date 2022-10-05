@@ -26,6 +26,9 @@ export class HeaderComponent implements OnInit {
 
   itemImageUrl= '../assets/IMG/APLogo.png';
 
+  title1 = "Soy Franco";
+  title2 = "Full Stack Juniors";
+
 
 
   constructor() { }

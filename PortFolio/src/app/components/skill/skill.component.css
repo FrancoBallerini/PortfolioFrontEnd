@@ -1,0 +1,37 @@
+a {
+  text-decoration: none;
+}
+
+li {
+  padding : 15px 15px;
+}
+
+p {
+  color: #03a9be;
+  margin: 10px;
+  padding: 10px;
+}
+
+h1, h5, h6 {
+  text-align: center;
+  color: #00bcd4;
+  margin:25px;
+}
+
+article{
+  text-align: center;
+  margin:10px;
+  padding: 10px;
+
+}
+
+.card {
+  background-color: black;
+  height:220px;
+  width: 250px;
+  margin:20px;
+  padding:20px;
+  align-items: center;
+  justify-content: center;
+  border:#00bcd4 solid;
+}

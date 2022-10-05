@@ -1,0 +1,53 @@
+/*Proyectos*/
+a {
+  text-decoration: none;
+}
+
+li {
+  padding : 15px 15px;
+}
+
+p {
+  color: #03a9be;
+  margin: 10px;
+  padding: 10px;
+}
+
+h1, h5, h6 {
+  text-align: center;
+  color: #00bcd4;
+  margin:25px;
+}
+
+article{
+  text-align: center;
+  margin:10px;
+  padding: 10px;
+
+}
+
+
+
+.cardgaleria img {
+  width: 100px;
+  height:auto;
+
+
+}
+.cardgaleria p{
+
+  text-align:center;
+
+}
+
+
+
+.cardgaleria{
+
+  margin:auto;
+  padding:9px;
+  box-shadow: 3px 2px 25px  #00bcd4;
+
+}
+
+
