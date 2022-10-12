@@ -5,6 +5,9 @@ h1{
 
 li {
   text-decoration: none;
+  list-style: none;
+  margin: auto;
+
 }
 
 
@@ -14,6 +17,18 @@ article{
   padding: 10px;
 
 }
-/**linea de tiempo **/
+.container {
+  margin:25px;
+}
+
+.card{
+  background-color: black;
+  margin:auto;
+  padding:9px;
+  box-shadow: 3px 2px 25px  #00bcd4;
+}
+
+
+
 
 
