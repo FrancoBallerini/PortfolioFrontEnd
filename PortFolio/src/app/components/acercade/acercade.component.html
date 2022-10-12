@@ -3,23 +3,24 @@
 
 <article class="acercade" id="acercade">
   <h1 class="titulo">{{title}}</h1>
-  <img alt="item"
-  [src]="itemImageUrl">
-
-  <!--funcion para cambiar texto -->
-
-  <div >
-    <p>Hola, Soy Franco. Encantado de conocerte.<br>
-      Desde que comencé mi viaje como diseñador independiente hace 2 años he realizo trabajos de forma remota, ya sea del lado del cliente (Front-end) como del lado del servidor (Back-end), con una base de clientes independientes seleccionados <br>
-      No me gusta definirme por el trabajo que he hecho. Me defino por el trabajo que quiero hacer.<br>
-      Estoy en constante aprendizaje y en búsqueda de desafíos. <br>
-      En mi tiempo libre disfruto de ir al Gym, del arte, los juegos, series, películas y la construcción de mis propios proyectos<br>
-      Soy Tranquilo, confiado, curioso, resolutivo y detallista. Una Persona de familia y padre x 3
-      <br>
-      <br>
-      ¡¡Hagamos algo especial!!
-      </p>
-
+  <div class="card mb-3" >
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="FotoPerfil" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Hola, Soy Franco. Encantado de conocerte</h5>
+          <p class="card-text"> Desde que comencé mi viaje como diseñador independiente hace 2 años he realizo trabajos de forma remota, ya sea del lado del cliente (Front-end) como del lado del servidor (Back-end), con una base de clientes independientes seleccionados <br>
+            No me gusta definirme por el trabajo que he hecho. Me defino por el trabajo que quiero hacer.<br>
+            Estoy en constante aprendizaje y en búsqueda de desafíos. <br>
+            En mi tiempo libre disfruto de ir al Gym, del arte, los juegos, series, películas y la construcción de mis propios proyectos<br>
+            Soy Tranquilo, confiado, curioso, resolutivo y detallista. Una Persona de familia y padre x 3.</p>
+          <p class="card-text"><small> ¡¡Hagamos algo especial!!</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 
@@ -41,7 +42,7 @@
         </button>
     </div>
 
-  </div>
+
 
      <!-- <!--funcion para cambiar texto -->
 
