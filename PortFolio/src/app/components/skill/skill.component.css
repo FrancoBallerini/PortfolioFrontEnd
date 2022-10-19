@@ -1,19 +1,5 @@
 
-a {
-  text-decoration: none;
-}
-
-li {
-  padding : 15px 15px;
-}
-
-p {
-  color: #03a9be;
-  margin: 10px;
-  padding: 10px;
-}
-
-h1, h5, h6 {
+h1 {
   text-align: center;
   color: #00bcd4;
   margin:25px;
@@ -36,9 +22,6 @@ article{
   justify-content: center;
   border:#00bcd4 solid;
 }
-
-
-/*prueba*/
 
 .container {
   position:relative;
