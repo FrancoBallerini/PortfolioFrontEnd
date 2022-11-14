@@ -1,103 +1,105 @@
 <header class="navbar-header">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <!-- Container nav -->
-      <div class="container">
-        <!-- Navbar brand -->
-        <a
-          class="navbar-brand me-2"
-          href="https://argentinaprograma.inti.gob.ar/"
-          target="-blank"
-        >
-        <img alt="item"
-        [src]="itemImageUrl"
-        width="100px">
-        </a>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <!-- Container nav -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a
+        class="navbar-brand me-2"
+        href="https://argentinaprograma.inti.gob.ar/"
+        target="-blank"
+      >
+        <img alt="item" src="../assets/IMG/APLogo.png" width="100px" />
+      </a>
 
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-link">
+          <a href="https://www.instagram.com" target="_blank">
+            <fa-icon [icon]="faInstagram"> </fa-icon>
+          </a>
+        </button>
+        <button type="button" class="btn btn-link">
+          <a href="https://twitter.com/?lang=es" target="_blank"
+            ><fa-icon [icon]="faTwitter"> </fa-icon>
+          </a>
+        </button>
+        <button type="button" class="btn btn-link">
+          <a href="https://github.com/FrancoBallerini" target="_blank"
+            ><fa-icon [icon]="faGithub"> </fa-icon
+          ></a>
+        </button>
+        <button type="button" class="btn btn-link">
+          <a
+            href="https://www.linkedin.com/in/franco-eduardo-ballerini-b7536b110/"
+            target="_blank"
+            ><fa-icon [icon]="faLinkedinIn"> </fa-icon>
+          </a>
+        </button>
 
-            <button type="button" class="btn btn-link">
-                <a href="https://www.instagram.com" target="_blank">
-                  <fa-icon
-                  [icon]="faInstagram"
-                  >
-                  </fa-icon>
-                </a>
-              </button>
-              <button type="button" class="btn btn-link">
-                <a href="https://twitter.com/?lang=es" target="_blank"
-                  ><fa-icon
-                  [icon]="faTwitter"
-                  >
-                  </fa-icon>
-                </a>
-              </button>
-            <button type="button" class="btn btn-link">
-              <a href="https://github.com/FrancoBallerini" target="_blank"
-                ><fa-icon
-                [icon]="faGithub"
-                >
-                </fa-icon></a>
-            </button>
-            <button type="button" class="btn btn-link">
-              <a
-                href="https://www.linkedin.com/in/franco-eduardo-ballerini-b7536b110/"
-                target="_blank"
-                ><fa-icon
-                [icon]="faLinkedinIn"
-                >
-                </fa-icon>
-              </a>
-            </button>
+        <div class="btn-group">
+          <button
+            class="btn btn-link dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <span>
+              <fa-icon [icon]="faUserCircle">
+              </fa-icon>
+            </span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li class="wrapper">
+              <form class="p-3 mt-3">
+                <div class="form-field d-flex align-items-center dropdown-item">
 
+                    <fa-icon [icon]="faUserCircle"></fa-icon>
 
-             <div class="btn-group">
-              <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-                <a href="#login">
-                  <fa-icon
-                  [icon]="faUserCircle"
-                  >
-                  </fa-icon>
-                </a>
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><button class="btn btn-link dropdown-item " type="button">
-                  <h6>
-                  User Name</h6>
-                </button>
-              </li>
-                <li><button class="btn btn-link dropdown-item" type="button">
-                  <h6>
-                  Password</h6>
-                </button>
-              </li>
+                  <input
+                    type="text"
+                    name="userName"
+                    id="userName"
+                    placeholder="Username"
+                  />
+                </div>
+                <div class="form-field d-flex align-items-center dropdown-item">
 
-              </ul>
-            </div>
+                    <fa-icon [icon]="faKey"></fa-icon>
 
-            <button type="button" class="btn btn-link">
-              <a
-                href="#"
-                >Log Out
-              </a>
-            </button>
+                  <input
+                    type="password"
+                    name="password"
+                    id="pwd"
+                    placeholder="Password"
+                  />
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <button class="btn mt-3 btn-link">Login</button>
+                </div>
+              </form>
 
+              <div class="text-center fs-6">
+                <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+              </div>
+            </li>
+
+          </ul>
         </div>
+
+        <button type="button" class="btn btn-link">
+          <a href="#">Log Out </a>
+        </button>
       </div>
-    </nav>
-
-    <!-- BANNER-->
-
-    <div class="banner">
-      <h1>Bienvenidos, {{title1}}
-        <br>
-        <h2>{{title2}}</h2>
-      </h1>
-
     </div>
+  </nav>
 
+  <!-- BANNER-->
 
-
-
-
-  </header>
-
+  <div class="banner">
+    <h1>
+      Bienvenidos, Soy Franco
+      <br />
+      <h2>Full Stack Juniors</h2>
+    </h1>
+  </div>
+</header>

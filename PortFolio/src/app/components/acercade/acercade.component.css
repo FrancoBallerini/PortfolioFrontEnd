@@ -7,16 +7,20 @@ article{
   padding: 10px;
 
 }
+img {
+  width: 250px;
 
+}
 .card {
   background-color: black;
+
 }
 
 .card-body{
   background-color: #2a2a2a;
   border-radius: 5px;
-
-  border:#00bcd4 solid;
+  border:#2a2a2a solid 1px;
+  box-shadow: inset 8px 8px 8px black, inset -8px -8px 8px rgb(255, 255, 255);
 }
 
 

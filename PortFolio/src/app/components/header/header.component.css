@@ -5,9 +5,61 @@
 
 
 .dropdown-menu {
-  background-color: black;
+  background-color: rgb(65, 60, 60);
   border: 1px solid blue;
+  border-radius: 15px;
+  opacity: 0.7;
 }
+
+.wrapper {
+  width: 350px;
+
+}
+
+.wrapper .form-field input {
+  width: 100%;
+  display: block;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 10px 15px 10px 10px;
+
+}
+
+.wrapper .form-field {
+  padding-left: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: inset 8px 8px 8px black, inset -8px -8px 8px rgb(255, 255, 255);
+}
+
+.wrapper .form-field .fas {
+  color: #555;
+}
+
+
+
+.wrapper .btn:hover {
+  background-color: #039BE5;
+}
+
+.wrapper a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: #03A9F4;
+}
+
+.wrapper a:hover {
+  color: #039BE5;
+}
+
+
+
+
+
+/*BANNER*/
 
 
 .banner {
@@ -59,6 +111,5 @@
     background-position-x: 500%;
   }
 }
-
 
 

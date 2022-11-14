@@ -9,8 +9,6 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 export class AcercadeComponent implements OnInit {
 
   faPen = faPen;
-  FotoPerfil ="";
-  title ="Acerca de Mi...";
 
 
 

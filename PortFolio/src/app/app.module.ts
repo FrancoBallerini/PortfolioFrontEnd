@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +14,11 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { SkillComponent } from './components/skill/skill.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PorfolioService } from 'src/app/servicios/porfolio.service';
+import { HttpClientModule } from '@angular/common/http';
+import { BotonesComponent } from './components/botones/botones.component';
+
+
 
 
 
@@ -24,13 +32,17 @@ import { FooterComponent } from './components/footer/footer.component';
     EducacionComponent,
     SkillComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    BotonesComponent,
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

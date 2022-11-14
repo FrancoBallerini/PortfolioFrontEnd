@@ -3,12 +3,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-
-
-
-
-
+import { faKey, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -23,15 +18,13 @@ export class HeaderComponent implements OnInit {
   faGithub = faGithub;
   faLinkedinIn = faLinkedinIn;
   faUserCircle = faUserCircle;
-
-  itemImageUrl= '../assets/IMG/APLogo.png';
-
-  title1 = "Soy Franco";
-  title2 = "Full Stack Juniors";
+  faKey = faKey ;
 
 
+  constructor() {
 
-  constructor() { }
+
+  }
 
   ngOnInit(): void {
   }

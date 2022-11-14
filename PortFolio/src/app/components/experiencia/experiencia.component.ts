@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
+
+
+
 
 
 
@@ -10,14 +13,27 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 })
 export class ExperienciaComponent implements OnInit {
 
-  faPen = faPen
+
+
+  faPen = faPen;
 
 
 
-  LogoDivito = '../assets/IMG/LogoDivito.jpg'
-  LogoRAZ = '../assets/IMG/LogoRAZ.png'
-  LogoTZ = '../assets/IMG/LogoTZ.png'
-  constructor() { }
+  LogoDivito = '../assets/IMG/LogoDivito.jpg';
+  LogoRAZ = '../assets/IMG/LogoRAZ.png';
+  LogoTZ = '../assets/IMG/LogoTZ.png';
+
+
+
+
+
+
+  constructor ( )
+   {
+
+
+  }
+
 
   ngOnInit(): void {
   }
