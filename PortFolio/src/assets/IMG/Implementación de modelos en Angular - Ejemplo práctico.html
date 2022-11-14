@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/ -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://techriders.tajamar.es/xmlrpc.php">
+	<!--[if lt IE 9]>
+		<script src="https://techriders.tajamar.es/wp-content/themes/wpex-elegant/js/html5.js"></script>
+	<![endif]-->
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.10 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Implementación de modelos en Angular - Ejemplo práctico</title>
+	<meta name="description" content="Un modelo en Angular es la declaración de un objeto que contendra propiedades. Los componenetes podrán importar modelos y hacer uso de ellos.">
+	<link rel="canonical" href="https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/">
+	<meta property="og:locale" content="es_ES">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Implementación de modelos en Angular - Ejemplo práctico">
+	<meta property="og:description" content="Un modelo en Angular es la declaración de un objeto que contendra propiedades. Los componenetes podrán importar modelos y hacer uso de ellos.">
+	<meta property="og:url" content="https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/">
+	<meta property="og:site_name" content="Tech Riders">
+	<meta property="article:published_time" content="2021-06-08T17:30:15+00:00">
+	<meta property="article:modified_time" content="2022-11-04T09:27:24+00:00">
+	<meta name="author" content="MariaVictoria.Castro@tajamar365.com">
+	<meta name="twitter:label1" content="Escrito por">
+	<meta name="twitter:data1" content="MariaVictoria.Castro@tajamar365.com">
+	<meta name="twitter:label2" content="Tiempo de lectura">
+	<meta name="twitter:data2" content="6 minutos">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/","url":"https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/","name":"Implementación de modelos en Angular - Ejemplo práctico","isPartOf":{"@id":"https://techriders.tajamar.es/#website"},"datePublished":"2021-06-08T17:30:15+00:00","dateModified":"2022-11-04T09:27:24+00:00","author":{"@id":"https://techriders.tajamar.es/#/schema/person/2e694d863268a656f3141fbeef3dd0ed"},"description":"Un modelo en Angular es la declaración de un objeto que contendra propiedades. Los componenetes podrán importar modelos y hacer uso de ellos.","breadcrumb":{"@id":"https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/#breadcrumb"},"inLanguage":"es","potentialAction":[{"@type":"ReadAction","target":["https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/"]}]},{"@type":"BreadcrumbList","@id":"https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Portada","item":"https://techriders.tajamar.es/"},{"@type":"ListItem","position":2,"name":"Creación e implementación de Modelos en componentes de Angular &#8211; ejemplo práctico"}]},{"@type":"WebSite","@id":"https://techriders.tajamar.es/#website","url":"https://techriders.tajamar.es/","name":"Tech Riders","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://techriders.tajamar.es/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"es"},{"@type":"Person","@id":"https://techriders.tajamar.es/#/schema/person/2e694d863268a656f3141fbeef3dd0ed","name":"MariaVictoria.Castro@tajamar365.com","image":{"@type":"ImageObject","inLanguage":"es","@id":"https://techriders.tajamar.es/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/190a8760854dfb87d80a08161a517187?s=96&r=g","contentUrl":"https://secure.gravatar.com/avatar/190a8760854dfb87d80a08161a517187?s=96&r=g","caption":"MariaVictoria.Castro@tajamar365.com"},"url":"https://techriders.tajamar.es/author/mariavictoria-castrotajamar365-com/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="alternate" type="application/rss+xml" title="Tech Riders » Feed" href="https://techriders.tajamar.es/feed/">
+<link rel="alternate" type="application/rss+xml" title="Tech Riders » Feed de los comentarios" href="https://techriders.tajamar.es/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Tech Riders » Comentario Creación e implementación de Modelos en componentes de Angular – ejemplo práctico del feed" href="https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/feed/">
+		<!-- This site uses the Google Analytics by ExactMetrics plugin v7.10.0 - Using Analytics tracking - https://www.exactmetrics.com/ -->
+							<script src="./Implementación de modelos en Angular - Ejemplo práctico_files/js" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async=""></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var em_version = '7.10.0';
+				var em_track_user = true;
+				var em_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-36508483-3',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.ExactMetricsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (em_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+							
+														parameters.send_to = exactmetrics_frontend.ua;
+							__gtagDataLayer(type, name, parameters);
+													} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dNDMyYj': true,
+											});
+															__gtagTracker('config', 'UA-36508483-3', {"forceSSL":"true"} );
+										window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by ExactMetrics -->
+		<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/techriders.tajamar.es\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script><script src="./Implementación de modelos en Angular - Ejemplo práctico_files/wp-emoji-release.min.js.descarga" type="text/javascript" defer=""></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/classic-themes.min.css" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="ecwd-popup-style-css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/ecwd_popup.css" type="text/css" media="all">
+<link rel="stylesheet" id="ecwd_font-awesome-css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="ecwd-public-css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpex-style-css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="wpex-responsive-css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpex-font-awesome-css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="open-sans-css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="googlefont-montserrat-css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="googlefont-rokkitt-css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/css(2)" type="text/css" media="all">
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/jquery.min.js.descarga" id="jquery-core-js"></script><script>(function(){class RuffleMimeType{constructor(a,b,c){this.type=a,this.description=b,this.suffixes=c}}class RuffleMimeTypeArray{constructor(a){this.__mimetypes=[],this.__named_mimetypes={};for(let b of a)this.install(b)}install(a){let b=this.__mimetypes.length;this.__mimetypes.push(a),this.__named_mimetypes[a.type]=a,this[a.type]=a,this[b]=a}item(a){return this.__mimetypes[a]}namedItem(a){return this.__named_mimetypes[a]}get length(){return this.__mimetypes.length}}class RufflePlugin extends RuffleMimeTypeArray{constructor(a,b,c,d){super(d),this.name=a,this.description=b,this.filename=c}install(a){a.enabledPlugin||(a.enabledPlugin=this),super.install(a)}}class RufflePluginArray{constructor(a){this.__plugins=[],this.__named_plugins={};for(let b of a)this.install(b)}install(a){let b=this.__plugins.length;this.__plugins.push(a),this.__named_plugins[a.name]=a,this[a.name]=a,this[b]=a}item(a){return this.__plugins[a]}namedItem(a){return this.__named_plugins[a]}get length(){return this.__plugins.length}}const FLASH_PLUGIN=new RufflePlugin("Shockwave Flash","Shockwave Flash 32.0 r0","ruffle.js",[new RuffleMimeType("application/futuresplash","Shockwave Flash","spl"),new RuffleMimeType("application/x-shockwave-flash","Shockwave Flash","swf"),new RuffleMimeType("application/x-shockwave-flash2-preview","Shockwave Flash","swf"),new RuffleMimeType("application/vnd.adobe.flash-movie","Shockwave Flash","swf")]);function install_plugin(a){navigator.plugins.install||Object.defineProperty(navigator,"plugins",{value:new RufflePluginArray(navigator.plugins),writable:!1}),navigator.plugins.install(a),0<a.length&&!navigator.mimeTypes.install&&Object.defineProperty(navigator,"mimeTypes",{value:new RuffleMimeTypeArray(navigator.mimeTypes),writable:!1});for(var b=0;b<a.length;b+=1)navigator.mimeTypes.install(a[b])}install_plugin(FLASH_PLUGIN);})();</script><script src="chrome-extension://ahfkifbbjfnnibgmepmhlmkbmmakinoa/dist/ruffle.js?uniqueMessageSuffix=11906440332"></script>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/jquery-migrate.min.js.descarga" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/frontend-gtag.min.js.descarga" id="exactmetrics-frontend-script-js"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id="exactmetrics-frontend-script-js-extra">/* <![CDATA[ */
+var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"zip,mp3,mpeg,pdf,docx,pptx,xlsx,rar","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/techriders.tajamar.es","hash_tracking":"false","ua":"UA-36508483-3","v4_id":""};/* ]]> */
+</script>
+<link rel="https://api.w.org/" href="https://techriders.tajamar.es/wp-json/"><link rel="alternate" type="application/json" href="https://techriders.tajamar.es/wp-json/wp/v2/posts/46885"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://techriders.tajamar.es/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://techriders.tajamar.es/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1">
+<link rel="shortlink" href="https://techriders.tajamar.es/?p=46885">
+<link rel="alternate" type="application/json+oembed" href="https://techriders.tajamar.es/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftechriders.tajamar.es%2Fcreacion-e-implementacion-de-modelos-en-a%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://techriders.tajamar.es/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftechriders.tajamar.es%2Fcreacion-e-implementacion-de-modelos-en-a%2F&amp;format=xml">
+<!-- Typography CSS --><style type="text/css">body{font-family:Montserrat;font-weight:400;font-size:14px;line-height:1.9;}h1, h2, h3, h4, h5, h6{font-family:Rokkitt;}</style><link rel="icon" href="https://techriders.tajamar.es/wp-content/uploads/2022/10/cropped-1_LOGO_COLOR-32x32.png" sizes="32x32">
+<link rel="icon" href="https://techriders.tajamar.es/wp-content/uploads/2022/10/cropped-1_LOGO_COLOR-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://techriders.tajamar.es/wp-content/uploads/2022/10/cropped-1_LOGO_COLOR-180x180.png">
+<meta name="msapplication-TileImage" content="https://techriders.tajamar.es/wp-content/uploads/2022/10/cropped-1_LOGO_COLOR-270x270.png">
+		<style type="text/css" id="wp-custom-css">
+			.grid-container {
+	display: grid;
+    grid-template-columns: 18% 82%;
+    background-color: white;
+    border: 2px solid #ddd;
+    }
+.foto{
+   margin-top: 0px;
+   }
+.encabezado{
+    padding: 0px;
+    margin-right: 3px;
+    border-bottom: 1px dotted #ddd;
+    }
+#logo img {
+	width: 180px;
+}
+.site-info {
+	width: 450px;
+	text-align: left;
+	margin: 0 auto;
+	color: #FFF;
+	font-size: 12px;
+}
+.site-info strong {
+	color: #FFF;
+}
+.footer-logo {
+	float: left;
+	margin-right: 15px;
+}
+.footer-first {
+	padding-top: 27px;
+	font-size: 14px;
+	font-weight: 700;
+}		</style>
+		<link id="ecwd-calendar-main-css" rel="stylesheet" type="text/css" href="./Implementación de modelos en Angular - Ejemplo práctico_files/calendar.css"></head>
+
+<body class="post-template-default single single-post postid-46885 single-format-video ecwd-theme-wpex-elegant">
+
+	<div id="wrap" class="clr">
+
+		
+<div id="header-wrap" class="fixed-header clr">
+
+    <header id="header" class="site-header container clr" role="banner">
+
+        
+<div class="site-branding clr">
+
+	<div id="logo" class="clr">
+
+		
+			<div class="site-text-logo clr">
+			
+				<a href="https://techriders.tajamar.es/" title="Tech Riders" rel="home">Tech Riders</a>
+
+				
+			</div><!-- .site-text-logo -->
+
+		
+	</div><!-- #logo -->
+
+</div><!-- .site-branding -->        
+        
+<div id="sidr-close"><a href="https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/#sidr-close" class="toggle-sidr-close"></a></div>
+<div id="site-navigation-wrap">
+	<a href="https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/#sidr-main" id="navigation-toggle"><span class="fa fa-bars"></span>Menu</a>
+	<nav id="site-navigation" class="navigation main-navigation clr" role="navigation">
+		<div class="menu-menu-principal-container"><ul id="menu-menu-principal" class="dropdown-menu sf-menu sf-js-enabled"><li id="menu-item-35424" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35424"><a href="https://techriders.tajamar.es/">Inicio</a></li>
+<li id="menu-item-33658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33658"><a href="https://techriders.tajamar.es/calendario/">Camps técnicos</a></li>
+<li id="menu-item-33659" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33659"><a href="https://techriders.tajamar.es/sobre-nosotos/">Sobre nosotros</a></li>
+<li id="menu-item-33660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33660"><a href="https://techriders.tajamar.es/personas-2/">Personas</a></li>
+<li id="menu-item-33662" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33662"><a href="https://techriders.tajamar.es/contacta/">Contacta</a></li>
+</ul></div>	</nav><!-- #site-navigation -->
+</div><!-- #site-navigation-wrap -->
+    </header><!-- #header -->
+
+</div><!-- #header-wrap -->
+				
+		<div id="main" class="site-main container clr">
+
+	<div id="primary" class="content-area clr">
+
+		<main id="content" class="site-content left-content clr" role="main">
+
+			
+
+<article>
+	
+<div class="post-video wpex-video-embed clr">
+	<iframe title="Creación e implementación de Modelos en componentes de Angular – ejemplo práctico" width="980" height="551" src="./Implementación de modelos en Angular - Ejemplo práctico_files/91Yob2v68dE.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" data-ruffle-polyfilled=""></iframe></div><!-- .post-video -->	
+<header class="page-header clr">
+
+	<h1 class="page-header-title">Creación e implementación de Modelos en componentes de Angular – ejemplo práctico</h1>
+
+	
+<ul class="post-meta clr">
+
+	<li class="meta-date">
+		Posted on		<span class="meta-date-text">8 junio, 2021</span>
+	</li>
+
+			<li class="meta-category">
+			<span class="meta-seperator">/</span>Under			<a href="https://techriders.tajamar.es/category/desarrollo/javascript/angularjs/" title="AngularJS">AngularJS</a>, <a href="https://techriders.tajamar.es/category/desarrollo/" title="Desarrollo">Desarrollo</a>, <a href="https://techriders.tajamar.es/category/formacion-tajamar/" title="Formación Tajamar">Formación Tajamar</a>, <a href="https://techriders.tajamar.es/category/desarrollo/full-stack/" title="Full Stack">Full Stack</a>, <a href="https://techriders.tajamar.es/category/desarrollo/html-5/" title="HTML">HTML</a>, <a href="https://techriders.tajamar.es/category/desarrollo/javascript/" title="JavaScript">JavaScript</a>, <a href="https://techriders.tajamar.es/category/sin-categoria/" title="Sin categoría">Sin categoría</a>, <a href="https://techriders.tajamar.es/category/tajamar/" title="tajamar">tajamar</a>		</li>
+	
+			<li class="meta-comments comment-scroll">
+			<span class="meta-seperator">/</span>With			<a href="https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/#respond" class="comments-link">0 Comments</a>		</li>
+	
+</ul><!-- .post-meta -->	
+</header><!-- #page-header -->	
+<div class="entry clr">
+	
+<pre class="wp-block-preformatted">Un modelo en angular es una clase que representa un objeto con propiedades que permite la utilización de la misma desde clases externas, evitando la reiteración de código. A lo largo de esta entrada veremos cómo construir un modelo y cómo implementarla en componentes. </pre>
+
+
+
+<p><strong>Construcción de un modelo:</strong></p>
+
+
+
+<pre class="wp-block-preformatted">Estas clases se colocan dentro de src/app en una carpeta llamada models.
+El nombre de estos ficheros se escribe en minúscula:
+<strong>nombrefichero.ts</strong>. Como mencionamos previamente, un modelo es una clase que define un objeto con sus respectivas características, por ende, su sintáxsis es la siguiente:
+<strong>export class NombreClase{
+  constructor(
+  public propiedad : tipo;
+  public propiedad: tipo;
+  ){}
+}</strong>
+La sintaxis previa declara las propiedades dentro del constructor, lo cual resulta una gran ventaja para el programador. También existe otra forma un poco más larga que declara las propiedades fuera del constructor y las inicializa dentro del mismo en base a los parámetros recibidos:
+<strong>export class NombreClase{
+  public propiedad : tipo;
+  public propiedad : tipo;
+    constructor(valor1, valor2){
+     this.propiedad : valor1;
+     this.propiedad: valor2;
+    }
+}</strong></pre>
+
+
+
+<p class="has-text-align-left"><strong>Implementación de un modelo: </strong></p>
+
+
+
+<pre class="wp-block-preformatted">Para implementar un modelo debemos importarlo en el componente que deseemos utilizarlo. Su sintaxis es la siguiente:
+<strong>Import { NombreModelo } from 'ruta/models/modelo.ts' 
+</strong></pre>
+
+
+
+<p class="has-text-align-center"><strong>EJEMPLO PRÁCTICO</strong></p>
+
+
+
+<pre class="wp-block-preformatted">Realizaremos una aplicación basada en dos componentes (hotel y viajeros) y un modelo (<strong>viajero.ts)</strong>. El componente hotel contendrá un array de tipo <strong>Viajero </strong>y el componente <strong>viajeros </strong>utilizará el modelo para visualizarlos. Además realizaremos las funcionalidades de añadir, editar y eliminar un viajero utilizando nuevamente nuestro respectivo modelo con el fin de comprobar el gran beneficio que aporta el uso de estos en nuestras aplicaciones. </pre>
+
+
+
+<p><strong>Creación de la carpeta models y del fichero viajeros.ts</strong></p>
+
+
+
+<pre class="wp-block-preformatted">Dentro de <strong>app </strong>crearemos una carpeta llamada <strong>models</strong>. Luego seleccionamos <strong>"New file"</strong> y creamos un fichero llamado <strong>viajero.ts</strong>. Este fichero será nuestro modelo o clase.</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50612785523/in/dateposted-public/"><img decoding="async" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50612785523_3b5a0a9d0e_m.jpg" alt="creacionCarpetaModels" width="240" height="82"></a>
+</div></figure>
+
+
+
+<p><strong>Construcción del modelo viajero.ts: </strong></p>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50613566801/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50613566801_c1ffd5df21_n.jpg" alt="creacionModeloViajero" width="320" height="196"></a>
+</div></figure>
+
+
+
+<p><strong>Construcción del componente hotel:</strong></p>
+
+
+
+<pre class="wp-block-preformatted">Creamos el componente hotel (con sus respectivos ficheros) y como hemos mencionado previamente, este componente contendrá un array de tipo <strong>Viajero</strong>. Para poder hacer uso del modelo dentro de esta clase debemos importar <strong>viajero.ts</strong>:
+<strong>Import { Viajero } from './../../models/viajero';</strong></pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50613799122/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50613799122_99226d1580_n.jpg" alt="importarModeloClaseHotel" width="320" height="20"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">A continuación, declaramos una variable que será un array de tipo <strong>Viajero </strong>y lo inicializamos dentro del constructor creando objetos con propiedades coincidentes a las declaradas en el modelo (el tipo de dato debe coincidir): 
+</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50613896122/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50613896122_d258a81bae_z.jpg" alt="InicializacionArrayHotel" width="640" height="198"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">En el componente <strong>hotel.component.html</strong> recorreremos el array de viajeros y enviaremos cada objeto y su posición en el array al componente <strong>app-viajeros</strong> (esto nos será útil cuando posteriormente realizemos nuestros métodos de editar y eliminar): </pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50613109743/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50613109743_0e544f2515_z.jpg" alt="enviarArrayViajeros" width="640" height="114"></a>
+</div></figure>
+
+
+
+<p><strong>Construcción del componente viajeros:</strong></p>
+
+
+
+<pre class="wp-block-preformatted">Este componente será el encargado de recibir cada uno de los objetos que envía <strong>app-hotel</strong> y visualizarlos. Para ello, necesitaremos importar el modelo <strong>viajeros.ts</strong>, <strong><a href="https://angular.io/guide/inputs-outputs">Input </a></strong>(para poder recibir las propiedades enviadas del padre), <strong><a href="https://angular.io/guide/inputs-outputs">Output</a></strong>(para poder enlazar los métodos enviados desde el padre con el hijo) y <strong><a href="https://angular.io/guide/inputs-outputs">EventEmitter</a></strong>.</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50613164593/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50613164593_6d4a7179ed_z.jpg" alt="importacionesViajeros" width="640" height="49"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">Por un lado, en la clase de <strong>viajeros.component.ts</strong> declararemos una variable con <strong>@Input</strong> para poder recibir de <strong>app-hotel</strong> cada viajero y otra variable<strong> @Input</strong> para recibir la posición. Por otro lado, declararemos dos métodos (de momento vacíos): <strong>deleteViajero()</strong> y <strong>editarViajero()</strong>. Luego mostramos cada viajero en el html accediendo a cada una de las propiedades que posee el objeto recibido y que previamente hemos declarado en el modelo. Además añadiremos en la vista dos botones: <strong>editar</strong> y <strong>eliminar </strong>junto a el evento <strong>"click"</strong> que ejecutarán los métodos mencionados previamente:
+
+<strong>viajeros.component.ts: </strong></pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614110476/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614110476_e4ed893699.jpg" alt="claseViajeros1" width="461" height="392"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted"><strong>viajeros.component.html:</strong>
+</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614046657/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614046657_ae869a5489_c.jpg" alt="mostrarViajeros" width="777" height="183"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted"><strong>Resultado HTML: </strong>
+En la siguiente imagen podemos observar cada viajero visualizado. A continuación realizaremos las funcionalidades de añadir, editar y eliminar (utilizando el modelo).  </pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614052001/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614052001_bf7cc6b080_z.jpg" alt="resultadoMostrarViajeros" width="580" height="584"></a>
+</div></figure>
+
+
+
+<p><strong>Creación de la funcionalidad añadir:</strong></p>
+
+
+
+<pre class="wp-block-preformatted">En el controlador del componente hotel, declararemos dos funciones: <strong>mostrarNuevoFormulario()</strong> y <strong>crearViajero()</strong>. La primera función servirá como una función auxiliar ya que cuando pulsemos el botón de <strong>"añadir viajero"</strong> cambiará el valor de una variable auxiliar a <strong>"true"</strong> y en la vista mostraremos con un <strong>*ngIf</strong> el formulario para poder recoger los nuevos valores del objeto que deseemos añadir. La segunda función recogerá los valores del formulario (por referencia) y con un <strong>"push"</strong> lo añadiremos al array de viajeros. 
+<strong>hotel.component.ts:</strong></pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614512641/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614512641_89eb1aa9bc.jpg" alt="crearViajero" width="460" height="500"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">Luego añadiremos una función<strong> cancelarNuevo()</strong> que pondrá a false la variable auxiliar (<strong>this.nuevo</strong>) mencionada previamente para ocultar el formulario cuando no deseemos añadir mas viajeros:</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50613781058/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50613781058_e1b5bc87b2_m.jpg" alt="cancelarnuevo" width="240" height="74"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted"><strong>hotel.component.html: </strong></pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50613775048/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50613775048_6efbd6a1c9_z.jpg" alt="formulariocrearnuevo" width="640" height="346"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted"><strong>Resultado HTML: </strong></pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50617451643/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50617451643_3af734117c_c.jpg" alt="FUNCIONAÑADIRNUEVO" width="800" height="255"></a>
+</div></figure>
+
+
+
+<p><strong>Creación de la funcionalidad eliminar:</strong></p>
+
+
+
+<pre class="wp-block-preformatted">Al principio del ejemplo, enviamos desde el componente <strong>app-hotel </strong>cada uno de los objetos de tipo <strong>Viajero </strong>y la posición que ocupa el mismo en el array. Ahora añadiremos una función en <strong>app-hotel</strong> que será <strong>eliminarViajero()</strong> y que enviaremos a <strong>app-viajeros</strong> y enlazaremos con <strong>@Output()</strong>: 
+<strong>hotel.component.html: </strong></pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50613877268/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50613877268_8b5d569699_c.jpg" alt="activarEliminar" width="790" height="121"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted"><strong>hotel.component.ts: </strong></pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614639131/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614639131_fb342ef6e6_n.jpg" alt="eliminarviajerohotel" width="320" height="84"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">Este método recibe con <strong>event</strong> la posición del elemento que deseamos borrar y con el método <strong>splice()</strong> lo elimina.
+
+Ahora debemos enlazar el método recibido en el componente viajeros con el método <strong>eliminarViajero()</strong> que se encuentra en el componente hotel, para ello importamos <strong>@Ouput()</strong> y <strong>EventEmitter() </strong>y lo enlazamos: 
+</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614842262/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614842262_272f6eab8f_n.jpg" alt="enlazareliminar" width="320" height="30"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">Luego añadiremos una función llamada <strong>deleteViajero()</strong> que será ejecutada cuando hagamos<strong> "click" </strong>en el botón de eliminar que se encuentra en la vista de viajeros. A su vez, este método llamará al método enlazado <strong>eliminarViajero()</strong> y enviará mediante <strong>emit()</strong>, la posición del elemento pulsado: 
+
+</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614757676/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614757676_916625e9ca_n.jpg" alt="deleteViajeroviajero" width="317" height="66"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted"><strong>Resultado HTML:</strong>
+Si probamos esta funcionalidad sobre el primer elemento que aparece, podremos observar que el elemento se elimina del array:
+</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614033248/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614033248_5a93a68203_z.jpg" alt="resultadoEliminar" width="640" height="428"></a>
+</div></figure>
+
+
+
+<p><strong>Creación de la funcionalidad editar:</strong></p>
+
+
+
+<pre class="wp-block-preformatted">Ya hemos creado las funcionalidades de añadir y eliminar. Por último haremos la funcionalidad de poder editar un objeto de tipo Viajero del array (utilizando también dicho modelo). Tendremos en <strong>hotel.component.ts</strong> una variable auxiliar (<strong>editar</strong>) que estará inicializada a false y que utilizaremos posteriormente para visualizar en la vista hotel un formulario utilizando <strong>*ngIf</strong>: 
+ </pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614917297/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614917297_ac376ea79a_m.jpg" alt="editarAux" width="232" height="27"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">Además declararemos tres funciones: <strong>activarEdicion()</strong> que enviaremos y enlazaremos al componente viajeros y que mediante <strong>event</strong> recibirá la posición del elemento que deseemos editar y pondrá a <strong>true </strong>la variable auxiliar (<strong>editar</strong>), <strong>updateViajero()</strong> que recogerá los nuevos valores del formulario y <strong>cancelarEditar()</strong> que pondrá a false la variable editar y ocultará el formulario: 
+</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614816341/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614816341_e5569182e1.jpg" alt="metodosEditar" width="468" height="500"></a>
+</div></figure>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614977756/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614977756_9841727f3d_m.jpg" alt="cancelareditar" width="201" height="80"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">En <strong>hotel.component.html</strong> enviaremos el método <strong>activarEdicion()</strong> a <strong>app-viajeros</strong>: 
+</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614082703/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614082703_cc59fa06c0_z.jpg" alt="enviarMetodoEditar" width="640" height="117"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">En esta vista también añadiremos el formulario para editar que se activará en base al valor de la variable <strong>editar</strong>:</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614223298/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614223298_45c2372ed1_z.jpg" alt="formuEDITAR" width="617" height="301"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">Recibiremos y enlazaremos dicho método en<strong> viajeros.component.ts</strong> utilizando <strong>@Output()</strong> y <strong>EventEmitter()</strong>: 
+</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614836741/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614836741_2f10f8ef80_n.jpg" alt="recibirMetodoEDITAR" width="320" height="38"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">Posteriormente declararemos en <strong>viajeros.component.ts</strong> un método <strong>editarViajero()</strong> que llamará al metodo enlazado <strong>activarEdicion()</strong> y enviará mediante <strong>emit()</strong> la posición del elemento que deseemos editar:
+ </pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614971252/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614971252_945ef9d39d_n.jpg" alt="metodoEDITRAVIJAERO" width="311" height="68"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted"><strong>Resultado HTML: </strong>
+Si damos <strong>"click"</strong> en el botón editar aparecerá el formulario y si cambiamos por ejemplo el nombre del primer elemento podremos observar lo siguiente:
+</pre>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50615055241/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50615055241_5f85fca519_z.jpg" alt="resultadoEDIT1" width="640" height="312"></a>
+</div></figure>
+
+
+
+<figure class="wp-block-embed is-type-photo is-provider-flickr wp-block-embed-flickr"><div class="wp-block-embed__wrapper">
+<a href="https://www.flickr.com/photos/191116844@N08/50614295178/in/dateposted-public/"><img decoding="async" loading="lazy" src="./Implementación de modelos en Angular - Ejemplo práctico_files/50614295178_32df0e3805.jpg" alt="RESULTADOEDITAR2" width="487" height="283"></a>
+</div></figure>
+
+
+
+<pre class="wp-block-preformatted">Para finalizar quisiera agregar que durante el desarrollo del ejemplo, muchas veces el resultado HTML no se actualizaba correctamente y una de las soluciones fue volver a lanzar el servidor con <strong>ng serve</strong>. Además recomiendo la extensión Angular Schematics ya que permite la autogeneración de un componente ( pulsamos sobre la carpeta que deseemos crear un componente click derecho y seleccionamos "Generate a component" y ¡listo!). Espero que este post os haya sido útil.</pre>
+
+
+
+<pre class="wp-block-preformatted">Autor/a: María Victoria Castro Dotta
+Curso: Desarrollo Web Full Stack, MultiCloud y Multiplataforma
+Centro: Tajamar
+Año académico: 2020-2021
+Código / recursos utilizados / Otros datos de interés:<a rel="sponsored nofollow" href="https://github.com/VictoriaCastroDotta/postmodelos.git"> </a><a href="https://github.com/VictoriaCastroDotta/postmodelos.git">código creación e implementación de Modelos en Angular</a></pre>
+</div><!-- .entry -->		
+<footer class="entry-footer">
+	</footer><!-- .entry-footer --></article>
+
+
+ 
+<div id="comments" class="comments-area">
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"><div class="heading"><span>Leave a Comment</span></div> <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/#respond" style="display:none;">Cancelar la respuesta</a></small></h3><form action="https://techriders.tajamar.es/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Tu dirección de correo electrónico no será publicada.</span> <span class="required-field-message">Los campos obligatorios están marcados con <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comentario <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Nombre <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></p>
+<p class="comment-form-email"><label for="email">Correo electrónico <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required="required"></p>
+<p class="comment-form-url"><label for="url">Web</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Publicar el comentario"> <input type="hidden" name="comment_post_ID" value="46885" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c77610269d"></p><p style="display: none !important;"><label>Δ<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="1668014380087"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	<p class="akismet_comment_form_privacy_notice">Este sitio usa Akismet para reducir el spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Aprende cómo se procesan los datos de tus comentarios</a>.</p></div><!-- #comments -->			
+		</main><!-- #content -->
+
+		
+	<aside id="secondary" class="sidebar-container" role="complementary">
+
+		<div class="sidebar-inner">
+			<div class="widget-area">
+				<div d="search-2" class="sidebar-widget widget_search clr"><h5 class="widget-title">Buscar en la web</h5>
+<form method="get" id="searchform" class="searchform" action="https://techriders.tajamar.es/" role="search">
+	<input type="search" class="field" name="s" value="" id="s" placeholder="To search type and hit enter">
+</form></div>
+		<div d="recent-posts-2" class="sidebar-widget widget_recent_entries clr">
+		<h5 class="widget-title">Últimos tutoriales</h5>
+		<ul>
+											<li>
+					<a href="https://techriders.tajamar.es/creacion-de-una-wishlist-utilizando-amazon-elastic-cache/">Creación de una WishList utilizando Amazon Elastic Cache</a>
+									</li>
+											<li>
+					<a href="https://techriders.tajamar.es/como-utilizar-aws-codebuild/">Como utilizar AWS CodeBuild</a>
+									</li>
+											<li>
+					<a href="https://techriders.tajamar.es/como-funciona-una-funcion-lambda-y-las-variables-de-entorno-en-aws/">Como funciona una función Lambda y las variables de entorno en AWS</a>
+									</li>
+											<li>
+					<a href="https://techriders.tajamar.es/alojar-paginas-web-estaticas-en-amazon-s3/">Alojar Páginas Web Estáticas en Amazon S3</a>
+									</li>
+											<li>
+					<a href="https://techriders.tajamar.es/encriptacion-y-desencriptacion-en-aws-kms/">Encriptación y desencriptación en AWS KMS</a>
+									</li>
+					</ul>
+
+		</div><div d="categories-2" class="sidebar-widget widget_categories clr"><h5 class="widget-title">Categorías</h5>
+			<ul>
+					<li class="cat-item cat-item-21"><a href="https://techriders.tajamar.es/category/desarrollo/net/">.NET</a> (259)
+</li>
+	<li class="cat-item cat-item-6809"><a href="https://techriders.tajamar.es/category/70-533/">70-533</a> (15)
+</li>
+	<li class="cat-item cat-item-6850"><a href="https://techriders.tajamar.es/category/alibaba-cloud/">Alibaba Cloud</a> (2)
+</li>
+	<li class="cat-item cat-item-3521"><a href="https://techriders.tajamar.es/category/desarrollo/mobile/android/">Android</a> (23)
+</li>
+	<li class="cat-item cat-item-7149"><a href="https://techriders.tajamar.es/category/desarrollo/angular/">Angular</a> (23)
+</li>
+	<li class="cat-item cat-item-6392"><a href="https://techriders.tajamar.es/category/desarrollo/javascript/angularjs/">AngularJS</a> (16)
+</li>
+	<li class="cat-item cat-item-6849"><a href="https://techriders.tajamar.es/category/aws/">AWS</a> (43)
+</li>
+	<li class="cat-item cat-item-6982"><a href="https://techriders.tajamar.es/category/azure/az-100/">AZ-100</a> (16)
+</li>
+	<li class="cat-item cat-item-6983"><a href="https://techriders.tajamar.es/category/azure/az-101/">AZ-101</a> (17)
+</li>
+	<li class="cat-item cat-item-7151"><a href="https://techriders.tajamar.es/category/azure/az-103/">AZ-103</a> (6)
+</li>
+	<li class="cat-item cat-item-31"><a href="https://techriders.tajamar.es/category/azure/">Azure</a> (174)
+</li>
+	<li class="cat-item cat-item-41"><a href="https://techriders.tajamar.es/category/desarrollo/geolocalizacion/bing-maps/">Bing Maps</a> (1)
+</li>
+	<li class="cat-item cat-item-3301"><a href="https://techriders.tajamar.es/category/desarrollo/net/c/">C#</a> (221)
+</li>
+	<li class="cat-item cat-item-131"><a href="https://techriders.tajamar.es/category/camp/">Camp</a> (21)
+</li>
+	<li class="cat-item cat-item-7338"><a href="https://techriders.tajamar.es/category/ciberseguridad/">Ciberseguridad</a> (2)
+</li>
+	<li class="cat-item cat-item-661"><a href="https://techriders.tajamar.es/category/cisco/">Cisco</a> (181)
+</li>
+	<li class="cat-item cat-item-671"><a href="https://techriders.tajamar.es/category/cisco/ccna_rs/">Cisco CCNA R&amp;S</a> (209)
+</li>
+	<li class="cat-item cat-item-7181"><a href="https://techriders.tajamar.es/category/cloud/">Cloud</a> (60)
+</li>
+	<li class="cat-item cat-item-61"><a href="https://techriders.tajamar.es/category/servidores/comunicaciones/">Comunicaciones</a> (32)
+</li>
+	<li class="cat-item cat-item-5001"><a href="https://techriders.tajamar.es/category/cisco/ccna_rs/connecting-networks/">Connecting Networks</a> (75)
+</li>
+	<li class="cat-item cat-item-6654"><a href="https://techriders.tajamar.es/category/containers/">Containers</a> (21)
+</li>
+	<li class="cat-item cat-item-2681"><a href="https://techriders.tajamar.es/category/desarrollo/css/">CSS</a> (27)
+</li>
+	<li class="cat-item cat-item-81"><a href="https://techriders.tajamar.es/category/desarrollo/">Desarrollo</a> (291)
+</li>
+	<li class="cat-item cat-item-6976"><a href="https://techriders.tajamar.es/category/devops/">DevOps</a> (9)
+</li>
+	<li class="cat-item cat-item-6724"><a href="https://techriders.tajamar.es/category/dns/">DNS</a> (21)
+</li>
+	<li class="cat-item cat-item-6653"><a href="https://techriders.tajamar.es/category/docker/">Docker</a> (18)
+</li>
+	<li class="cat-item cat-item-91"><a href="https://techriders.tajamar.es/category/eventos/">Eventos</a> (21)
+</li>
+	<li class="cat-item cat-item-361"><a href="https://techriders.tajamar.es/category/servidores/comunicaciones/exchange-online/">Exchange</a> (1)
+</li>
+	<li class="cat-item cat-item-101"><a href="https://techriders.tajamar.es/category/formacion-tajamar/">Formación Tajamar</a> (256)
+</li>
+	<li class="cat-item cat-item-7180"><a href="https://techriders.tajamar.es/category/desarrollo/full-stack/">Full Stack</a> (90)
+</li>
+	<li class="cat-item cat-item-3451"><a href="https://techriders.tajamar.es/category/desarrollo/geolocalizacion/">Geolocalización</a> (3)
+</li>
+	<li class="cat-item cat-item-3371"><a href="https://techriders.tajamar.es/category/desarrollo/alm/git/">Git</a> (19)
+</li>
+	<li class="cat-item cat-item-3541"><a href="https://techriders.tajamar.es/category/desarrollo/geolocalizacion/google-maps/">Google Maps</a> (2)
+</li>
+	<li class="cat-item cat-item-2671"><a href="https://techriders.tajamar.es/category/desarrollo/html-5/">HTML</a> (65)
+</li>
+	<li class="cat-item cat-item-111"><a href="https://techriders.tajamar.es/category/azure/iaas/">IaaS</a> (24)
+</li>
+	<li class="cat-item cat-item-121"><a href="https://techriders.tajamar.es/category/infraestructura/">Infraestructura</a> (69)
+</li>
+	<li class="cat-item cat-item-6966"><a href="https://techriders.tajamar.es/category/inteligencia-artificial/">Inteligencia Artificial</a> (3)
+</li>
+	<li class="cat-item cat-item-4971"><a href="https://techriders.tajamar.es/category/cisco/ccna_rs/introduction-to-networks/">Introduction To Networks</a> (82)
+</li>
+	<li class="cat-item cat-item-3511"><a href="https://techriders.tajamar.es/category/desarrollo/mobile/ios/">iOS</a> (16)
+</li>
+	<li class="cat-item cat-item-2691"><a href="https://techriders.tajamar.es/category/desarrollo/javascript/">JavaScript</a> (47)
+</li>
+	<li class="cat-item cat-item-3431"><a href="https://techriders.tajamar.es/category/desarrollo/sharepoint/jsom/">JSOM</a> (6)
+</li>
+	<li class="cat-item cat-item-2461"><a href="https://techriders.tajamar.es/category/microsoft/">Microsoft</a> (177)
+</li>
+	<li class="cat-item cat-item-2332"><a href="https://techriders.tajamar.es/category/servidores/windows-server/microsoft-mcsa-windows-server-2012/microsoft-mcsa-70-410/">Microsoft MCSA 70-410</a> (34)
+</li>
+	<li class="cat-item cat-item-2341"><a href="https://techriders.tajamar.es/category/servidores/windows-server/microsoft-mcsa-windows-server-2012/microsoft-mcsa-70-411/">Microsoft MCSA 70-411</a> (39)
+</li>
+	<li class="cat-item cat-item-2351"><a href="https://techriders.tajamar.es/category/servidores/windows-server/microsoft-mcsa-windows-server-2012/microsoft-mcsa-70-412/">Microsoft MCSA 70-412</a> (43)
+</li>
+	<li class="cat-item cat-item-6650"><a href="https://techriders.tajamar.es/category/servidores/windows-server/microsoft-mcsa-windows-server-2016/microsoft-mcsa-70-740/">Microsoft MCSA 70-740</a> (69)
+</li>
+	<li class="cat-item cat-item-6651"><a href="https://techriders.tajamar.es/category/servidores/windows-server/microsoft-mcsa-windows-server-2016/microsoft-mcsa-70-741/">Microsoft MCSA 70-741</a> (76)
+</li>
+	<li class="cat-item cat-item-6652"><a href="https://techriders.tajamar.es/category/servidores/windows-server/microsoft-mcsa-windows-server-2016/microsoft-mcsa-70-742/">Microsoft MCSA 70-742</a> (70)
+</li>
+	<li class="cat-item cat-item-2321"><a href="https://techriders.tajamar.es/category/servidores/windows-server/microsoft-mcsa-windows-server-2012/">Microsoft MCSA Windows Server 2012</a> (117)
+</li>
+	<li class="cat-item cat-item-6649"><a href="https://techriders.tajamar.es/category/servidores/windows-server/microsoft-mcsa-windows-server-2016/">Microsoft MCSA Windows Server 2016</a> (177)
+</li>
+	<li class="cat-item cat-item-2401"><a href="https://techriders.tajamar.es/category/desarrollo/microsoft-mcsd-web-applications/microsoft-mcsd-70-480/">Microsoft MCSD 70-480</a> (9)
+</li>
+	<li class="cat-item cat-item-2411"><a href="https://techriders.tajamar.es/category/desarrollo/microsoft-mcsd-web-applications/microsoft-mcsd-70-486/">Microsoft MCSD 70-486</a> (106)
+</li>
+	<li class="cat-item cat-item-2421"><a href="https://techriders.tajamar.es/category/desarrollo/microsoft-mcsd-web-applications/microsoft-mcsd-70-487/">Microsoft MCSD 70-487</a> (68)
+</li>
+	<li class="cat-item cat-item-2311"><a href="https://techriders.tajamar.es/category/desarrollo/microsoft-mcsd-sharepoint-apps/">Microsoft MCSD SharePoint Apps</a> (7)
+</li>
+	<li class="cat-item cat-item-2301"><a href="https://techriders.tajamar.es/category/desarrollo/microsoft-mcsd-web-applications/">Microsoft MCSD Web Applications</a> (166)
+</li>
+	<li class="cat-item cat-item-2361"><a href="https://techriders.tajamar.es/category/servidores/microsoft-mcse-private-cloud/microsoft-mcse-70-246/">Microsoft MCSE 70-246</a> (19)
+</li>
+	<li class="cat-item cat-item-2371"><a href="https://techriders.tajamar.es/category/servidores/microsoft-mcse-private-cloud/microsoft-mcse-70-247/">Microsoft MCSE 70-247</a> (36)
+</li>
+	<li class="cat-item cat-item-2331"><a href="https://techriders.tajamar.es/category/servidores/microsoft-mcse-private-cloud/">Microsoft MCSE Private Cloud</a> (56)
+</li>
+	<li class="cat-item cat-item-3461"><a href="https://techriders.tajamar.es/category/desarrollo/mobile/">Mobile</a> (25)
+</li>
+	<li class="cat-item cat-item-7182"><a href="https://techriders.tajamar.es/category/desarrollo/multiplataforma/">Multiplataforma</a> (33)
+</li>
+	<li class="cat-item cat-item-3322"><a href="https://techriders.tajamar.es/category/desarrollo/net/mvc/">Mvc</a> (184)
+</li>
+	<li class="cat-item cat-item-191"><a href="https://techriders.tajamar.es/category/microsoft/office-365/">Office 365</a> (14)
+</li>
+	<li class="cat-item cat-item-211"><a href="https://techriders.tajamar.es/category/azure/paas/">PaaS</a> (14)
+</li>
+	<li class="cat-item cat-item-6723"><a href="https://techriders.tajamar.es/category/powershell/">Powershell</a> (46)
+</li>
+	<li class="cat-item cat-item-221"><a href="https://techriders.tajamar.es/category/productividad/">Productividad</a> (23)
+</li>
+	<li class="cat-item cat-item-7150"><a href="https://techriders.tajamar.es/category/desarrollo/react/">React</a> (42)
+</li>
+	<li class="cat-item cat-item-3441"><a href="https://techriders.tajamar.es/category/desarrollo/sharepoint/rest/">Rest</a> (5)
+</li>
+	<li class="cat-item cat-item-4981"><a href="https://techriders.tajamar.es/category/cisco/ccna_rs/routing-and-switching-essentials/">Routing And Switching Essentials</a> (81)
+</li>
+	<li class="cat-item cat-item-2471"><a href="https://techriders.tajamar.es/category/azure/saas/">SaaS</a> (9)
+</li>
+	<li class="cat-item cat-item-4991"><a href="https://techriders.tajamar.es/category/cisco/ccna_rs/scaling-networks/">Scaling Networks</a> (51)
+</li>
+	<li class="cat-item cat-item-241"><a href="https://techriders.tajamar.es/category/seguridad/">Seguridad</a> (40)
+</li>
+	<li class="cat-item cat-item-251"><a href="https://techriders.tajamar.es/category/servidores/">Servidores</a> (150)
+</li>
+	<li class="cat-item cat-item-3401"><a href="https://techriders.tajamar.es/category/desarrollo/sharepoint/">SharePoint</a> (1)
+</li>
+	<li class="cat-item cat-item-3411"><a href="https://techriders.tajamar.es/category/desarrollo/sharepoint/sharepoint-apps/">SharePoint Apps</a> (1)
+</li>
+	<li class="cat-item cat-item-1"><a href="https://techriders.tajamar.es/category/sin-categoria/">Sin categoría</a> (350)
+</li>
+	<li class="cat-item cat-item-281"><a href="https://techriders.tajamar.es/category/sistemas-operativos/">Sistemas Operativos</a> (95)
+</li>
+	<li class="cat-item cat-item-371"><a href="https://techriders.tajamar.es/category/microsoft/office-365/lync-online/">Skype</a> (1)
+</li>
+	<li class="cat-item cat-item-171"><a href="https://techriders.tajamar.es/category/servidores/comunicaciones/lync-server-2013/">Skype-Lync Server</a> (2)
+</li>
+	<li class="cat-item cat-item-2651"><a href="https://techriders.tajamar.es/category/infraestructura/system-center/">System Center</a> (23)
+</li>
+	<li class="cat-item cat-item-6928"><a href="https://techriders.tajamar.es/category/tajamar/">tajamar</a> (97)
+</li>
+	<li class="cat-item cat-item-301"><a href="https://techriders.tajamar.es/category/uncategorized/">Uncategorized</a> (1)
+</li>
+	<li class="cat-item cat-item-2661"><a href="https://techriders.tajamar.es/category/servidores/virtualizacion/">Virtualización</a> (29)
+</li>
+	<li class="cat-item cat-item-3311"><a href="https://techriders.tajamar.es/category/desarrollo/net/visual-basic-net/">Visual Basic .Net</a> (15)
+</li>
+	<li class="cat-item cat-item-2531"><a href="https://techriders.tajamar.es/category/desarrollo/visual-studio/">Visual Studio</a> (96)
+</li>
+	<li class="cat-item cat-item-3391"><a href="https://techriders.tajamar.es/category/desarrollo/alm/visual-studio-online/">Visual Studio Online</a> (3)
+</li>
+	<li class="cat-item cat-item-7349"><a href="https://techriders.tajamar.es/category/w11/">W11</a> (1)
+</li>
+	<li class="cat-item cat-item-3351"><a href="https://techriders.tajamar.es/category/desarrollo/net/wcf/">WCF</a> (11)
+</li>
+	<li class="cat-item cat-item-3331"><a href="https://techriders.tajamar.es/category/desarrollo/net/web-api/">Web Api</a> (48)
+</li>
+	<li class="cat-item cat-item-3312"><a href="https://techriders.tajamar.es/category/desarrollo/net/web-forms/">Web Forms</a> (17)
+</li>
+	<li class="cat-item cat-item-3522"><a href="https://techriders.tajamar.es/category/desarrollo/mobile/windows-phone/">Windows Phone</a> (11)
+</li>
+	<li class="cat-item cat-item-321"><a href="https://techriders.tajamar.es/category/servidores/windows-server/">Windows Server</a> (228)
+</li>
+	<li class="cat-item cat-item-3341"><a href="https://techriders.tajamar.es/category/desarrollo/net/wpf/">WPF</a> (2)
+</li>
+	<li class="cat-item cat-item-3471"><a href="https://techriders.tajamar.es/category/desarrollo/mobile/xamarin/">Xamarin</a> (48)
+</li>
+	<li class="cat-item cat-item-3501"><a href="https://techriders.tajamar.es/category/desarrollo/mobile/xamarin/xamarin-android/">Xamarin Android</a> (25)
+</li>
+	<li class="cat-item cat-item-3481"><a href="https://techriders.tajamar.es/category/desarrollo/mobile/xamarin/xamarin-forms/">Xamarin Forms</a> (31)
+</li>
+	<li class="cat-item cat-item-3491"><a href="https://techriders.tajamar.es/category/desarrollo/mobile/xamarin/xamarin-ios/">Xamarin iOS</a> (20)
+</li>
+	<li class="cat-item cat-item-6725"><a href="https://techriders.tajamar.es/category/zona-stub/">Zona Stub</a> (2)
+</li>
+			</ul>
+
+			</div>			</div>
+		</div>
+		
+	</aside><!-- #secondary -->
+
+
+	</div><!-- #primary -->
+
+
+
+	</div><!-- #main-content -->
+
+	
+<div id="footer-wrap" class="site-footer clr">
+
+	
+	
+<footer id="copyright-wrap" class="clr">
+	<div id="copyright" role="contentinfo" class="clr">
+		<div class="site-info">
+<div class="footer-logo"><img src="./Implementación de modelos en Angular - Ejemplo práctico_files/escudo-negativo-blog.png"></div>
+<p class="footer-first">© 2021 FP + Professional Education</p>
+<p><strong>Dirección:</strong> Calle Pío Felipe 12, 28038,&nbsp; Madrid <br><strong>Teléfonos:</strong> 91 757 18 17 / 91 478 34 98&nbsp;</p>
+</div>	</div><!-- #copyright -->
+</footer><!-- #footer-wrap -->
+</div><!-- #footer-wrap -->
+</div><!-- #wrap -->
+
+
+<div id="mobile-search">
+	<form method="get" action="https://techriders.tajamar.es/" role="search" id="mobile-search-form">
+		<input type="search" class="field" name="s" value="" placeholder="To search type and hit enter">
+	</form>
+</div>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/ecwd_popup.js.descarga" id="ecwd-popup-js"></script>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/core.min.js.descarga" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/mouse.min.js.descarga" id="jquery-ui-mouse-js"></script>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/draggable.min.js.descarga" id="jquery-ui-draggable-js"></script>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/imagesloaded.min.js.descarga" id="imagesloaded-js"></script>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/masonry.min.js.descarga" id="masonry-js"></script>
+<script type="text/javascript" id="ecwd-public-js-extra">
+/* <![CDATA[ */
+var ecwd = {"ajaxurl":"https:\/\/techriders.tajamar.es\/wp-admin\/admin-ajax.php","ajaxnonce":"a846d44a6e","loadingText":"Cargando...","event_popup_title_text":"Detalles del evento","plugin_url":"https:\/\/techriders.tajamar.es\/wp-content\/plugins\/event-calendar-wd","gmap_key":"","gmap_style":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/scripts.js.descarga" id="ecwd-public-js"></script>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/comment-reply.min.js.descarga" id="comment-reply-js"></script>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/plugins.js.descarga" id="wpex-plugins-js"></script>
+<script type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/global.js.descarga" id="wpex-global-js"></script>
+<script defer="" type="text/javascript" src="./Implementación de modelos en Angular - Ejemplo práctico_files/akismet-frontend.js.descarga" id="akismet-frontend-js"></script>
+
+<div id="sidr-main" class="sidr left" style=""><div class="sidr-inner"><a href="https://techriders.tajamar.es/creacion-e-implementacion-de-modelos-en-a/#sidr-close" class="sidr-class-toggle-sidr-close"></a></div><div class="sidr-inner">
+		<div class="sidr-class-menu-menu-principal-container"><ul id="sidr-id-menu-menu-principal" class="sidr-class-dropdown-menu sidr-class-sf-menu sidr-class-sf-js-enabled"><li id="sidr-id-menu-item-35424" class="sidr-class-menu-item sidr-class-menu-item-type-custom sidr-class-menu-item-object-custom sidr-class-menu-item-35424"><a href="https://techriders.tajamar.es/">Inicio</a></li>
+<li id="sidr-id-menu-item-33658" class="sidr-class-menu-item sidr-class-menu-item-type-post_type sidr-class-menu-item-object-page sidr-class-menu-item-33658"><a href="https://techriders.tajamar.es/calendario/">Camps técnicos</a></li>
+<li id="sidr-id-menu-item-33659" class="sidr-class-menu-item sidr-class-menu-item-type-post_type sidr-class-menu-item-object-page sidr-class-menu-item-33659"><a href="https://techriders.tajamar.es/sobre-nosotos/">Sobre nosotros</a></li>
+<li id="sidr-id-menu-item-33660" class="sidr-class-menu-item sidr-class-menu-item-type-post_type sidr-class-menu-item-object-page sidr-class-menu-item-33660"><a href="https://techriders.tajamar.es/personas-2/">Personas</a></li>
+<li id="sidr-id-menu-item-33662" class="sidr-class-menu-item sidr-class-menu-item-type-post_type sidr-class-menu-item-object-page sidr-class-menu-item-33662"><a href="https://techriders.tajamar.es/contacta/">Contacta</a></li>
+</ul></div>	</div><div class="sidr-inner">
+	<form method="get" action="https://techriders.tajamar.es/" role="search" id="sidr-id-mobile-search-form">
+		<input type="search" class="sidr-class-field" name="s" value="" placeholder="To search type and hit enter">
+	</form>
+</div></div></body></html>

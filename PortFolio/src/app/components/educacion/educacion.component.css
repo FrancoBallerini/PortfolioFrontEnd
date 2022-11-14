@@ -13,8 +13,12 @@ article{
 }
 
 .list-group-item {
-  background-color: #2a2a2a;
+
   margin: 25px;;
   padding:9px;
-  border:#00bcd4 solid;
+
+  background-color: #2a2a2a;
+  border-radius: 5px;
+  border:#2a2a2a solid 1px;
+  box-shadow: inset 8px 8px 8px black, inset -8px -8px 8px rgb(255, 255, 255);
 }

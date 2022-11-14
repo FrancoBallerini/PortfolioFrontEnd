@@ -6,18 +6,42 @@
   <div class="card mb-3" >
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="../assets/IMG/foPerfil.jpg" class="img-fluid rounded-start" alt="fotoPerfil">
+        <img src="./assets/IMG/fotoPerfil.jpg" class="img-fluid rounded-start rounded-circle" alt="fotoPerfil">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-outline-success me-md-2" (click)="editar" type="button">
+            <span>
+            <fa-icon [icon]="faPen">
+            </fa-icon>
+          </span>
+        </button>
+        </div>
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title text-white">Hola, Soy Franco. Encantado de conocerte </h5>
+          <br>
           <p class="card-text text-white">
-            Desde que comencé mi viaje como diseñador independiente hace 2 años he realizo trabajos de forma remota, ya sea del lado del cliente (Front-end) como del lado del servidor (Back-end), con una base de clientes independientes seleccionados. <br>
-            No me gusta definirme por el trabajo que he hecho. Me defino por el trabajo que quiero hacer.<br>
-            Estoy en constante aprendizaje y en búsqueda de desafíos.<br>
-            En mi tiempo libre disfruto de ir al Gym, del arte, los juegos, series, películas y la construcción de mis propios proyectos<br>
-            Soy Tranquilo, confiado, curioso, resolutivo y detallista. Una Persona de familia y padre.</p>
+            Desde que comencé mi viaje como diseñador independiente hace 2 años he realizo trabajos de forma remota, ya sea del lado del cliente (Front-end) como del lado del servidor (Back-end), con una base de clientes independientes seleccionados.
+            </p>
+            <p class="card-text text-white">No me gusta definirme por el trabajo que he hecho. Me defino por el trabajo que quiero hacer.</p>
+            <p class="card-text text-white">Estoy en constante aprendizaje y en búsqueda de desafíos.</p>
+            <p class="card-text text-white">En mi tiempo libre disfruto de ir al Gym, del arte, los juegos, series, películas y la construcción de mis propios proyectos</p>
+            <p class="card-text text-white">Soy Tranquilo, confiado, curioso, resolutivo y detallista. Una Persona de familia y padre.</p>
           <p class="card-text"><small class="text-primary"> ¡¡Hagamos algo especial!!</small></p>
+
+          <!--Boton-->
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-outline-success me-md-2" type="button">
+              <span>
+              <fa-icon [icon]="faPen">
+              </fa-icon>
+            </span>
+          </button>
+          </div>
+
+          <!--fin de Boton-->
+
         </div>
       </div>
     </div>

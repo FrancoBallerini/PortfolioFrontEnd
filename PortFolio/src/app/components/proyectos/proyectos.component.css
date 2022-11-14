@@ -27,27 +27,11 @@ article{
 }
 
 
-
-.cardgaleria img {
-  width: 100px;
-  height:auto;
-
-
-}
-.cardgaleria p{
-
-  text-align:center;
-
-}
-
-
-
-.cardgaleria{
-
-  margin:auto;
+.card{
+  background-color: #2a2a2a;
+  margin: 30px;
   padding:9px;
-  box-shadow: 3px 2px 25px  #00bcd4;
-
+  box-shadow: inset 8px 8px 8px black, inset -8px -8px 8px rgb(255, 255, 255);
 }
 
 

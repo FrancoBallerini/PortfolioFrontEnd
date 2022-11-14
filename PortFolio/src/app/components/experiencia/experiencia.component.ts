@@ -1,10 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
-
-
-
-
-
+import { Component, OnInit } from '@angular/core';
+import { faPen, faRemove } from '@fortawesome/free-solid-svg-icons';
+import { PorfolioService} from 'src/app/servicios/porfolio.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -12,23 +8,12 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-
-
+  experienciaList: any;
 
   faPen = faPen;
+  faRemove = faRemove;
 
-
-
-  LogoDivito = '../assets/IMG/LogoDivito.jpg';
-  LogoRAZ = '../assets/IMG/LogoRAZ.png';
-  LogoTZ = '../assets/IMG/LogoTZ.png';
-
-
-
-
-
-
-  constructor ( )
+  constructor (private datosPorfolio:PorfolioService )
    {
 
 
@@ -36,6 +21,9 @@ export class ExperienciaComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.datosPorfolio.obtenerDatos().subscribe(data =>{
+      this.experienciaList=data.experience;
+    });
   }
 
 

@@ -4,6 +4,7 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faKey, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { PorfolioService} from 'src/app/servicios/porfolio.service';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { faKey, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
 
+  encabezado:any;
+
   faInstagram = faInstagram;
   faTwitter = faTwitter;
   faGithub = faGithub;
@@ -21,12 +24,14 @@ export class HeaderComponent implements OnInit {
   faKey = faKey ;
 
 
-  constructor() {
-
+  constructor(private datosPorfolio:PorfolioService) {
 
   }
 
   ngOnInit(): void {
+    this.datosPorfolio.obtenerDatos().subscribe(data =>{
+     this.encabezado=data;
+    });
   }
 
 }
